@@ -5,6 +5,10 @@ import quitoImg1 from '../fotos/quito1.png';
 import quitoImg2 from '../fotos/quito2.png';
 import quitoImg3 from '../fotos/quito3.png';
 import quitoImg4 from '../fotos/quito4.png';
+import enImg1 from '../fotos/ensayo1.png';
+import enImg2 from '../fotos/ensayo2.png';
+import enImg3 from '../fotos/ensayo3.png';
+import enImg4 from '../fotos/ensayo4.png';
 
 // --- INTERFACES ---
 interface MediaItem {
@@ -54,13 +58,30 @@ export default function Gallery() {
       ]
     },
     {
-      title: "LIVE CHAOS (MEDELLÍN)",
+      title: "ENSAYOS",
       items: [
-        { type: 'image', title: 'Altavoz Fest', url: 'https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800' },
-        { type: 'image', title: 'Teatro Matacandelas', url: 'https://images.pexels.com/photos/1134406/pexels-photo-1134406.jpeg?auto=compress&cs=tinysrgb&w=800' },
-        { type: 'image', title: 'Pogo Masivo', url: 'https://images.pexels.com/photos/1644888/pexels-photo-1644888.jpeg?auto=compress&cs=tinysrgb&w=800' },
+        { 
+          type: 'image', 
+          title: '1', 
+          url: enImg1 // 👈 Variable importada (sin comillas)
+        },
+        { 
+          type: 'image', 
+          title: '2', 
+          url: enImg2 
+        },
+        { 
+          type: 'image', 
+          title: '3', 
+          url: enImg3 
+        },
+        { 
+          type: 'image', 
+          title: '4', 
+          url: enImg4 
+        },
       ]
-    }
+    },
   ];
 
   // --- FUNCIONES DE NAVEGACIÓN DEL MODAL ---
