@@ -10,33 +10,33 @@ interface Member {
 export default function Members() {
   const members: Member[] = [
     {
-      name: "DIEGO FIERCE",
-      role: "Voz",
-      bio: "La voz del caos. 15 años destruyendo cuerdas vocales por el hardcore.",
+      name: "Potter",
+      role: "Voz raspada",
+      bio: "La voz del caos. 15 años destruyendo cuerdas vocales.",
       image: "https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      name: "CARLOS RIFFMASTER",
-      role: "Guitarra Líder",
+      name: "Pablo",
+      role: "Guitarra",
       bio: "Riffs que cortan como cuchillas. Precisión brutal en cada nota.",
       image: "https://images.pexels.com/photos/1327430/pexels-photo-1327430.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      name: "MIGUEL SHRED",
-      role: "Guitarra Rítmica",
+      name: "Nicolás",
+      role: "Voz grave",
       bio: "El muro de sonido. Groove pesado sin piedad.",
       image: "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      name: "JAVIER THUNDER",
+      name: "Buitrago",
       role: "Bajo",
       bio: "Líneas de bajo que sacuden los cimientos. Potencia pura.",
       image: "https://images.pexels.com/photos/1644888/pexels-photo-1644888.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      name: "ANDRÉS DESTROYER",
+      name: "Coco",
       role: "Batería",
-      bio: "Blast beats que no dan tregua. La máquina de guerra detrás de todo.",
+      bio: "el calaca",
       image: "https://images.pexels.com/photos/1481308/pexels-photo-1481308.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ];
