@@ -1,111 +1,148 @@
-import { Calendar, MapPin, Ticket } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight, Instagram, Globe } from 'lucide-react';
 
-interface Show {
-  date: string;
-  venue: string;
-  city: string;
-  status: 'past' | 'upcoming';
-  bands?: string[];
-}
+// Si tienes una foto específica del show en Ecuador, impórtala aquí.
+// Si no, usa una de las fotos de la banda en vivo.
+import showImage from '../fotos/potter.png'; // 👈 CAMBIA ESTO POR UNA FOTO EN VIVO SI TIENES
 
 export default function Shows() {
-  const shows: Show[] = [
-    { date: "25 Octubre 2025", venue: "Quitofest", city: "Quito", status: "upcoming", bands: ["mugre sur", "madbrain", "Total death", "Road to hell", "Infecto devorante", "Withblood", "Gualgura", "Retaque", "consumidor final"] },
-    { date: "25 Enero 2024", venue: "Streetdown", city: "Medellín", status: "past" },
-    { date: "26 Marzo 2024", venue: "Baile y mosh para la defensa personal", city: "Bogotá", status: "past", bands: ["Inmemorial", "Road to hell", "spitout", "días de agresión", "the last opportunity"] },
-    { date: "20 Mayo 2024", venue: "Audiciones altavoz", city: "Medellín", status: "past" },
-    { date: "20 Septiembre 2024", venue: "Nororientalfest", city: "Medellín", status: "past" },
-    { date: "18 Agosto 2024", venue: "Ruido y solidaridad", city: "Medellín", status: "past", bands: ["Alta agresión", "Pelea o muere", "Krujido", "MIserable", "Infecto", "Anti-todo", "KATABAXIS", "HARTXS"] },
-    { date: "19 Julio 2025", venue: "Nororientalfest", city: "Medellín", status: "past" },
-    { date: "23 Agosto 2025", venue: "stoffest", city: "Medellín", status: "past" },
-    { date: "25 Enero 2026", venue: "tao part fest", city: "Medellín", status: "past" },
-    { date: "19 Marzo 2023", venue: "Rehen 19 años de violencia", city: "Bogotá", status: "past", bands: ["Rehen", "Pela o muere", "A call for revenge", "Road to hell", "Enemy.906", "Alta agresión"] },
+  
+  // Lista de eventos (Puedes mezclar pasados épicos y futuros)
+  const pastEvents = [
+    {
+      city: "QUITO, ECUADOR",
+      venue: "Festival Internacional",
+      date: "NOV 2025", // Fecha del destacado
+      image: showImage,
+      description: "Destrucción total en territorio internacional. Representando el beatdown de Medallo."
+    }
   ];
 
-  const upcomingShows = shows.filter(show => show.status === 'upcoming');
-  const pastShows = shows.filter(show => show.status === 'past');
+  const upcomingShows = [
+    { day: "15", month: "MAR", city: "MEDELLÍN", venue: "Teatro Matacandelas", status: "CONFIRMADO" },
+    { day: "02", month: "ABR", city: "BOGOTÁ", venue: "Ace of Spades", status: "POR ANUNCIAR" },
+    { day: "20", month: "MAY", city: "CALI", venue: "Distrito Unicentro", status: "PENDIENTE" },
+  ];
 
   return (
-    <section className="min-h-screen py-32 px-4">
-      <div className="container mx-auto max-w-5xl">
-        <div className="flex items-center justify-center mb-16">
-          <Calendar className="w-12 h-12 text-red-600 mr-4" />
-          <h2 className="text-5xl md:text-6xl font-black text-red-600" style={{ fontFamily: 'Impact, sans-serif' }}>
-            CONCIERTOS
+    <section className="relative min-h-screen py-32 px-4 bg-black overflow-hidden">
+      
+      {/* --- FONDO CON TEXTURA --- */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-900/20 via-black to-black"></div>
+      <div className="absolute inset-0 opacity-20 pointer-events-none" 
+           style={{ backgroundImage: `url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E')` }}>
+      </div>
+
+      <div className="relative z-10 container mx-auto max-w-6xl">
+        
+        {/* TÍTULO */}
+        <div className="flex items-center justify-center mb-16 animate-fade-in-up">
+          <Globe className="w-10 h-10 md:w-12 md:h-12 text-red-600 mr-4 animate-spin-slow" />
+          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase drop-shadow-[0_4px_4px_rgba(220,38,38,0.5)]" style={{ fontFamily: 'Impact, sans-serif' }}>
+            TOUR <span className="text-red-600">&</span> FECHAS
           </h2>
-          <Calendar className="w-12 h-12 text-red-600 ml-4" />
         </div>
 
-        {upcomingShows.length > 0 && (
-          <div className="mb-16">
-            <h3 className="text-3xl font-black text-white mb-8 flex items-center gap-3">
-              <Ticket className="w-8 h-8 text-red-600" />
-              PRÓXIMOS SHOWS
-            </h3>
-            <div className="space-y-4">
-              {upcomingShows.map((show, index) => (
-                <div
-                  key={index}
-                  className="bg-red-600 border-2 border-red-600 p-6 hover:bg-red-700 transition-all group"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="flex flex-col md:flex-row md:items-center gap-4 mb-2">
-                        <span className="text-2xl font-black text-white">{show.date}</span>
-                        <div className="flex items-center gap-2 text-white">
-                          <MapPin className="w-5 h-5" />
-                          <span className="font-bold">{show.venue} - {show.city}</span>
-                        </div>
-                      </div>
-                      {show.bands && (
-                        <p className="text-white/90 text-sm">
-                          Con: {show.bands.join(', ')}
-                        </p>
-                      )}
-                    </div>
-                    <button className="bg-white text-red-600 font-bold py-3 px-8 hover:bg-gray-100 transition-all group-hover:scale-105 whitespace-nowrap">
-                      COMPRAR BOLETOS
-                    </button>
-                  </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+          {/* --- COLUMNA IZQUIERDA: EL DESTACADO (ECUADOR) --- */}
+          {/* Ya no dice "Próximo", ahora es un "Highlight" de la banda */}
+          <div className="lg:col-span-7 group relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-sm blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+            <div className="relative h-full bg-neutral-900 border-2 border-neutral-800 overflow-hidden flex flex-col">
+              
+              {/* Imagen Grande */}
+              <div className="relative h-96 overflow-hidden">
+                <img 
+                  src={pastEvents[0].image} 
+                  alt="Ecuador Show" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                />
+                {/* Badge de "DESTACADO" */}
+                <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-1 text-sm font-black tracking-widest uppercase shadow-lg transform -skew-x-12">
+                  INTERNATIONAL ASSAULT
                 </div>
-              ))}
+                
+                {/* Overlay Gradiente */}
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent"></div>
+              </div>
+
+              {/* Info del Destacado */}
+              <div className="p-8 flex-1 flex flex-col justify-end">
+                <div className="flex items-center gap-3 text-red-500 font-bold mb-2">
+                  <Calendar className="w-5 h-5" />
+                  <span className="tracking-widest">{pastEvents[0].date}</span>
+                </div>
+                
+                <h3 className="text-4xl md:text-6xl font-black text-white mb-4 leading-none uppercase" style={{ fontFamily: 'Impact, sans-serif' }}>
+                  {pastEvents[0].city}
+                </h3>
+                
+                <p className="text-gray-400 text-lg mb-6 border-l-2 border-red-600 pl-4">
+                  {pastEvents[0].description}
+                </p>
+              </div>
             </div>
           </div>
-        )}
 
-        <div>
-          <h3 className="text-3xl font-black text-white mb-8">SHOWS ANTERIORES</h3>
-          <div className="space-y-3">
-            {pastShows.map((show, index) => (
-              <div
-                key={index}
-                className="bg-black/60 backdrop-blur border-2 border-gray-800 hover:border-red-600 transition-all p-6"
-              >
-                <div className="flex flex-col md:flex-row md:items-center gap-4">
-                  <span className="text-xl font-bold text-red-600 md:w-32">{show.date}</span>
-                  <div className="flex items-center gap-2 text-gray-300 flex-1">
-                    <MapPin className="w-4 h-4" />
-                    <span className="font-semibold">{show.venue}</span>
-                    <span>-</span>
-                    <span>{show.city}</span>
-                  </div>
-                  {show.bands && (
-                    <span className="text-gray-500 text-sm">
-                      {show.bands.join(', ')}
+          {/* --- COLUMNA DERECHA: PRÓXIMAS FECHAS + CONTACTO --- */}
+          <div className="lg:col-span-5 flex flex-col gap-8">
+            
+            {/* Lista de Próximos Shows */}
+            <div className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 p-6">
+              <h4 className="text-2xl font-black text-white mb-6 flex items-center gap-2 uppercase italic">
+                <MapPin className="text-red-600" /> Próximas Masacres
+              </h4>
+              
+              <div className="space-y-4">
+                {upcomingShows.map((show, idx) => (
+                  <div key={idx} className="flex items-center gap-4 bg-black/40 p-4 border-l-2 border-transparent hover:border-red-600 transition-all group/item">
+                    {/* Fecha */}
+                    <div className="bg-neutral-800 p-2 text-center min-w-[70px] group-hover/item:bg-red-900/20 transition-colors">
+                      <span className="block text-2xl font-black text-white leading-none">{show.day}</span>
+                      <span className="block text-xs font-bold text-red-500 uppercase">{show.month}</span>
+                    </div>
+                    
+                    {/* Info */}
+                    <div className="flex-1">
+                      <h5 className="text-white font-bold uppercase tracking-wide">{show.city}</h5>
+                      <p className="text-gray-500 text-xs uppercase">{show.venue}</p>
+                    </div>
+
+                    {/* Status */}
+                    <span className="text-[10px] font-bold border border-gray-700 text-gray-400 px-2 py-1 rounded-full uppercase">
+                      {show.status}
                     </span>
-                  )}
-                </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        <div className="mt-16 bg-black/60 backdrop-blur border-2 border-gray-800 p-8 text-center">
-          <h3 className="text-2xl font-black text-white mb-4">¿QUIERES QUE TOQUEMOS EN TU CIUDAD?</h3>
-          <p className="text-gray-400 mb-6">Contáctanos para bookings y fechas disponibles</p>
-          <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 transition-all transform hover:scale-105">
-            CONTÁCTANOS
-          </button>
+            {/* --- CARD DE CONTACTO (Instagram) --- */}
+            <div className="bg-red-900/10 border-2 border-red-900/50 p-8 flex flex-col items-center text-center relative overflow-hidden group hover:bg-red-900/20 transition-colors">
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+              
+              <h4 className="text-3xl font-black text-white mb-2 uppercase z-10" style={{ fontFamily: 'Impact, sans-serif' }}>
+                ¿QUIERES BOOKEARNOS?
+              </h4>
+              <p className="text-gray-400 mb-6 z-10 text-sm">
+                Llevamos el caos a tu ciudad. Escribe ahora.
+              </p>
+              
+              <a 
+                href="https://www.instagram.com/roadtohell_hardcore/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="z-10 flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-bold tracking-widest uppercase transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] clip-path-polygon"
+                style={{ clipPath: 'polygon(10% 0, 100% 0, 90% 100%, 0% 100%)' }} // Forma agresiva inclinada
+              >
+                <Instagram className="w-5 h-5" />
+                ESCRIBIR AL DM
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </section>
