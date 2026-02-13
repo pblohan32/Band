@@ -3,7 +3,7 @@ import { Flame, Disc, Skull } from 'lucide-react';
 import bioVideo from '../videos/moshpit.mp4'; 
 // 👇 IMAGEN DE RESPALDO (Por si el video falla o no carga en Bolt)
 // Usa la misma imagen de fondo que tenías antes o una de los integrantes
-import posterImg from '../components/fondo.png'; 
+import posterImg from '../src/fondo.png'; 
 
 export default function Biography() {
   return (
