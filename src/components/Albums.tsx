@@ -52,11 +52,11 @@ export default function Albums() {
     },
     {
       id: 'disgusting',
-      title: "DISGUSTING",
+      title: "Infamia",
       year: 2023,
       cover: disgustingCover,
       audioSrc: disgustingAudio,
-      tracks: ["Disgusting", "Rotten Core", "Filth", "Scum", "Reject", "Vile"],
+      tracks: ["Disgusting"],
       description: "Ansias de sangre, frío en los huesos, contra la muerte sin miedo y de frente."
     },
     {
@@ -65,7 +65,7 @@ export default function Albums() {
       year: 2025,
       cover: moralDecayCover,
       audioSrc: moralDecayAudio,
-      tracks: ["Moral Decay", "Society's Collapse", "False Idols", "The End", "Final Judgment"],
+      tracks: ["Rigor mortis", "Disipar", "Castigo"],
       description: "Pierdo el control, no hay salida, viene por mi a donde voy."
     }
   ];
