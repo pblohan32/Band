@@ -85,7 +85,7 @@ export default function Gallery() {
         <div className="flex items-center justify-center mb-16">
           <ImageIcon className="w-10 h-10 md:w-12 md:h-12 text-red-600 mr-4" />
           <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter" style={{ fontFamily: 'Impact, sans-serif' }}>
-            GALERÍA <span className="text-red-600">BRUTAL</span>
+            ARCHIVO <span className="text-red-600">GALERÍA</span>
           </h2>
           <Video className="w-10 h-10 md:w-12 md:h-12 text-red-600 ml-4" />
         </div>
