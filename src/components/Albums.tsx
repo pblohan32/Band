@@ -9,7 +9,7 @@ import moralDecayCover from '../fotos/moral_decay.png';
 
 // --- AUDIOS (Asegúrate de tener estos archivos o comenta estas líneas si aún no existen) ---
 // 👇 Crea la carpeta 'audios' y mete tus mp3 ahí
-import interiorAudio from '../audios/distopia.mp3';
+import interiorAudio from '../audios/interior.mp3';
 import holocaustAudio from '../audios/distopia.mp3';
 import disgustingAudio from '../audios/disgusting.mp3';
 import moralDecayAudio from '../audios/rigor.mp3';
@@ -33,7 +33,7 @@ export default function Albums() {
 
   const albums: Album[] = [
     {
-      id: 'distopia',
+      id: 'interior',
       title: "EN MI INTERIOR",
       year: 2018,
       cover: interiorCover,
