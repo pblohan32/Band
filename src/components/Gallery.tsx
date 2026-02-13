@@ -1,5 +1,10 @@
 import { Image as ImageIcon, Video, Play, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useState, useRef } from 'react';
+// 👇 IMPORTACIÓN DE FOTOS LOCALES
+import quitoImg1 from '../fotos/quito1.jpg';
+import quitoImg2 from '../fotos/quito2.jpg';
+import quitoImg3 from '../fotos/quito3.jpg';
+import quitoImg4 from '../fotos/quito4.jpg';
 
 // --- INTERFACES ---
 interface MediaItem {
@@ -22,13 +27,30 @@ export default function Gallery() {
   // --- DATA ORGANIZADA POR SECCIONES ---
   const galleryData: GallerySection[] = [
 
+// 👇 AQUÍ ES DONDE CAMBIAS LAS FOTOS
     {
       title: "INTERNATIONAL ASSAULT (QUITOFEST)",
       items: [
-        { type: 'image', title: 'Destruyendo Quito', url: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800' },
-        { type: 'image', title: 'Moshpit Internacional', url: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800' },
-        { type: 'image', title: 'Backstage', url: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800' },
-        { type: 'image', title: 'La Banda', url: 'https://images.pexels.com/photos/1916824/pexels-photo-1916824.jpeg?auto=compress&cs=tinysrgb&w=800' },
+        { 
+          type: 'image', 
+          title: '1', 
+          url: quitoImg1 // 👈 Variable importada (sin comillas)
+        },
+        { 
+          type: 'image', 
+          title: '2', 
+          url: quitoImg2 
+        },
+        { 
+          type: 'image', 
+          title: '3', 
+          url: quitoImg3 
+        },
+        { 
+          type: 'image', 
+          title: '4', 
+          url: quitoImg4 
+        },
       ]
     },
     {
