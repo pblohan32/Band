@@ -7,7 +7,7 @@ import holocaustCover from '../fotos/holocaust.jpg';
 import disgustingCover from '../fotos/disgusting.jpg';
 import moralDecayCover from '../fotos/moral_decay.jpg';
 
-interface Album {
+interface Album {,
   title: string;
   year: number;
   cover: string;
