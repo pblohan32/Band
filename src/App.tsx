@@ -13,6 +13,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Fondo estático */}
       <div className="fixed inset-0 z-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-br from-red-950 via-black to-gray-900"></div>
         <div className="absolute inset-0" style={{
@@ -21,13 +22,22 @@ function App() {
       </div>
 
       <div className="relative z-10">
+        {/* Header también recibe el control para el menú */}
         <Header activeSection={activeSection} setActiveSection={setActiveSection} />
 
+        {/* Hero lo recibe para los botones de "Conoce la banda" */}
         {activeSection === 'home' && <Hero setActiveSection={setActiveSection} />}
+        
         {activeSection === 'bio' && <Biography />}
+        
         {activeSection === 'members' && <Members />}
+        
         {activeSection === 'albums' && <Albums />}
-        {activeSection === 'shows' && <Shows />}
+        
+        {/* 👇 AQUÍ ESTÁ EL CAMBIO IMPORTANTE 👇 */}
+        {/* Ahora Shows tiene poder para cambiar la sección */}
+        {activeSection === 'shows' && <Shows setActiveSection={setActiveSection} />}
+        
         {activeSection === 'gallery' && <Gallery />}
 
         <Footer />
