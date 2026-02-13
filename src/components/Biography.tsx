@@ -1,39 +1,39 @@
 import { Flame, Disc, Skull } from 'lucide-react';
-// 👇 IMAGEN DE RESPALDO (Por si el video falla o no carga en Bolt)
-// Usa la misma imagen de fondo que tenías antes o una de los integrantes
+
+// 👇 AQUÍ IMPORTAS TU FONDO.
+// Asegúrate de que la ruta '../fotos/pngnegro.png' sea correcta.
+// Si usas otra imagen, cambia el nombre aquí.
+import bioBg from '../fotos/pngnegro.png'; 
 
 export default function Biography() {
   return (
     <section className="relative min-h-screen py-32 px-4 overflow-hidden bg-black flex items-center">
 
-      {/* --- FONDO DE VIDEO (LOOP) CON RESPALDO --- */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster={posterImg} // 👈 ESTO EVITA EL ERROR "FILE CANNOT BE DISPLAYED"
-          className="w-full h-full object-cover grayscale contrast-125 opacity-50"
-        >
-          <source src={bioVideo} type="video/mp4" />
-          {/* Si el video falla, se verá el posterImg */}
-        </video>
-      </div>
+      {/* --- 1. IMAGEN DE FONDO (ESTÁTICA) --- */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${bioBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
 
-      {/* --- CAPAS DE TEXTURA --- */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/90 to-black/70"></div>
+      {/* --- 2. CAPA DE OSCURIDAD (OVERLAY) --- */}
+      {/* Esto es necesario para que el texto se lea sobre la textura. */}
+      {/* Si está muy oscuro, cambia bg-black/80 a bg-black/60 */}
+      <div className="absolute inset-0 z-0 bg-black/80"></div>
       
-      {/* Ruido suave para textura */}
+      {/* Ruido suave (Opcional, si te gusta el efecto "viejo") */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" 
            style={{ backgroundImage: `url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E')` }}>
       </div>
 
-      {/* --- CONTENIDO --- */}
-      {/* Ajusté max-w-5xl a max-w-4xl para que el texto esté más "ajustado" */}
+      {/* --- 3. CONTENIDO --- */}
       <div className="relative z-10 container mx-auto max-w-4xl">
 
-        {/* Título encabezado (Estilo Impact) */}
+        {/* Título encabezado */}
         <div className="flex items-center justify-center mb-12 animate-fade-in-up">
           <Flame className="w-8 h-8 md:w-10 md:h-10 text-red-600 mr-3 animate-pulse" />
           <h2
@@ -48,10 +48,10 @@ export default function Biography() {
         {/* Tarjeta de Contenido */}
         <div className="bg-neutral-900/60 backdrop-blur-sm border-2 border-neutral-800 shadow-[0_0_30px_rgba(0,0,0,0.8)] p-8 md:p-10 relative overflow-hidden group hover:border-red-900/50 transition-colors duration-500">
           
-          {/* Decoración sutil */}
+          {/* Calavera decorativa de fondo */}
           <Skull className="absolute -right-6 -bottom-6 w-48 h-48 text-black/40 rotate-12 z-0" />
 
-          {/* TEXTO DEL CUERPO - Ajustado al estilo "Members" (gris, tamaño base, sans-serif) */}
+          {/* TEXTO */}
           <div className="space-y-6 text-gray-400 font-normal text-base leading-relaxed relative z-10 text-justify">
 
             <p className="text-xl md:text-2xl font-black text-white italic tracking-wide text-center mb-6">
@@ -82,7 +82,7 @@ export default function Biography() {
               No hacemos compromisos. <span className="text-red-600">Solo hacemos ruido.</span>
             </p>
 
-            {/* Badges de Influencias - Pequeños y discretos */}
+            {/* Influencias */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <span className="text-xs text-red-600 font-bold uppercase tracking-widest mr-2 flex items-center gap-1">
                 <Disc className="w-3 h-3" /> Influencias:
