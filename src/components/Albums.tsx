@@ -38,8 +38,8 @@ export default function Albums() {
       year: 2018,
       cover: interiorCover,
       audioSrc: interiorAudio, // 👇 Aquí asignamos el audio importado
-      tracks: ["Intro", "En Mi Interior", "Falsa Realidad", "Odio Puro", "Sin Salida"],
-      description: "El inicio de la pesadilla. Sonido crudo y visceral que definió nuestra identidad."
+      tracks: ["En Mi Interior", "Injusticia", "Puño de sangre"],
+      description: "Yo siempre estaréadelante, no me dejaré pisotear, mis sentimientos me confunden, no me dejaré ganar"
     },
     {
       id: 'distopia',
@@ -47,8 +47,8 @@ export default function Albums() {
       year: 2022,
       cover: holocaustCover,
       audioSrc: holocaustAudio,
-      tracks: ["Holocaust", "Warzone", "Extinction", "Toxic Breed", "Nuclear Winter", "Human Waste"],
-      description: "La brutalidad elevada al máximo. Un ataque sonoro sin compasión."
+      tracks: ["Distopía", "Opresor", "Odio", "Rencor"],
+      description: "Fuerte y combatiente hasta perder los dientes, en la batalla y firme hasta la muerte."
     },
     {
       id: 'disgusting',
@@ -57,7 +57,7 @@ export default function Albums() {
       cover: disgustingCover,
       audioSrc: disgustingAudio,
       tracks: ["Disgusting", "Rotten Core", "Filth", "Scum", "Reject", "Vile"],
-      description: "Oscuro, denso y repugnante. Beatdown lento para romper huesos."
+      description: "Ansias de sangre, frío en los huesos, contra la muerte sin miedo y de frente."
     },
     {
       id: 'rigor',
@@ -66,7 +66,7 @@ export default function Albums() {
       cover: moralDecayCover,
       audioSrc: moralDecayAudio,
       tracks: ["Moral Decay", "Society's Collapse", "False Idols", "The End", "Final Judgment"],
-      description: "Nuestra obra maestra más reciente. La decadencia total de la humanidad hecha música."
+      description: "Pierdo el control, no hay salida, viene por mi a donde voy."
     }
   ];
 
