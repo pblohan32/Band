@@ -26,14 +26,14 @@ export default function Gallery() {
       items: [
         {
           type: 'video',
-          title: 'WAR MACHINE (Official Video)',
-          url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // ⚠️ CAMBIA ESTO POR TUS LINKS REALES
+          title: 'Ruido y solidaridad 2024 (Official Video)',
+          url: 'https://www.youtube.com/shorts/0isN7tgCgFc', // ⚠️ CAMBIA ESTO POR TUS LINKS REALES
           thumbnail: 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800'
         },
         {
           type: 'video',
-          title: 'DYSTOPIA (Live Session)',
-          url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+          title: 'RTH bogotá en "Baile hardcore para la defensa personal" (Live Session)',
+          url: 'https://www.youtube.com/watch?v=O7XRvTA1okk',
           thumbnail: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800'
         },
       ]
