@@ -8,7 +8,7 @@ import buitraImg from '../fotos/buitra.png';
 import cocoImg from '../fotos/coco.png';
 
 // Importamos el fondo oscuro
-import fondoImg from '../fotos/pngnegro.png';,
+import fondoImg from '../fotos/pngnegro.png';
 
 interface Member {
   name: string;
