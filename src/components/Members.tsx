@@ -46,7 +46,7 @@ export default function Members() {
     {
       name: "Coco",
       role: "Batería",
-      bio: "El calaca. Ritmos que rompen huesos.",
+      bio: "El calaca.",
       image: cocoImg
     }
   ];
