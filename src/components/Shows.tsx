@@ -1,7 +1,7 @@
 import { Calendar, MapPin, ArrowRight, Instagram, Globe, Music2 } from 'lucide-react';
 
 // 👇 IMPORTANTE: Usa la mejor foto en vivo que tengas para el Quitofest
-import quitoImage from '../fotos/potter.png'; 
+import quitoImage from '../fotos/potter2.png'; 
 
 export default function Shows() {
   
