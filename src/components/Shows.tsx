@@ -10,7 +10,7 @@ interface Show {
 
 export default function Shows() {
   const shows: Show[] = [
-    { date: "25 Octubre 2025", venue: "Quitofest", city: "Quito", status: "past", bands: ["mugre sur", "madbrain", "Total death", "Road to hell", "Infecto devorante", "Withblood", "Gualgura", "Retaque", "consumidor final"] },
+    { date: "25 Octubre 2025", venue: "Quitofest", city: "Quito", status: "upcoming", bands: ["mugre sur", "madbrain", "Total death", "Road to hell", "Infecto devorante", "Withblood", "Gualgura", "Retaque", "consumidor final"] },
     { date: "25 Enero 2024", venue: "Streetdown", city: "Medellín", status: "past" },
     { date: "26 Marzo 2024", venue: "Baile y mosh para la defensa personal", city: "Bogotá", status: "past", bands: ["Inmemorial", "Road to hell", "spitout", "días de agresión", "the last opportunity"] },
     { date: "20 Mayo 2024", venue: "Audiciones altavoz", city: "Medellín", status: "past" },
