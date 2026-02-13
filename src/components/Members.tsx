@@ -7,8 +7,9 @@ import nicoImg from '../fotos/nico.png';
 import buitraImg from '../fotos/buitra.png';
 import cocoImg from '../fotos/coco.png';
 
-// Importamos el fondo oscuro
-import fondoImg from '../fotos/pngnegro.png';
+// ⚠️ CUIDADO AQUÍ: Si esta línea falla, la comento para que la app no explote.
+// Descoméntala (quita las //) SOLO cuando estés seguro del nombre del archivo.
+ import fondoImg from '../fotos/pngnegro.png'; 
 
 interface Member {
   name: string;
@@ -52,25 +53,23 @@ export default function Members() {
   ];
 
   return (
-    <section className="relative min-h-screen py-32 px-4 overflow-hidden">
+    <section className="relative min-h-screen py-32 px-4 overflow-hidden bg-neutral-900">
       
       {/* --- FONDO HARDCORE --- */}
-      {/* Capa 1: La imagen de textura (pngnegro) */}
+      {/* Si logras arreglar la imagen, descomenta la línea de import arriba y cambia 'null' por 'fondoImg' abajo en url() */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 opacity-40"
         style={{
-          backgroundImage: `url(${fondoImg})`,
+          // backgroundImage: `url(${fondoImg})`, // <--- USAR ESTO CUANDO ARREGLES EL ARCHIVO
+          backgroundImage: 'linear-gradient(to bottom, #000000, #1a1a1a)', // MIENTRAS TANTO, UN DEGRADADO OSCURO
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
       />
       
-      {/* Capa 2: La oscuridad (Overlay) para que el texto sea legible */}
-      {/* Ajusta 'bg-black/80' a '/60' o '/90' según qué tanto quieras ver la textura */}
       <div className="absolute inset-0 bg-black/80 z-0"></div>
 
-      {/* --- CONTENIDO DE LA PÁGINA (Z-INDEX 10 PARA QUE FLOTE) --- */}
       <div className="relative z-10 container mx-auto max-w-7xl">
         <div className="flex items-center justify-center mb-16">
           <Skull className="w-12 h-12 text-red-600 mr-4 animate-pulse" />
