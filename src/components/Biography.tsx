@@ -1,7 +1,7 @@
 import { Flame, Disc, Skull } from 'lucide-react';
 // 👇 IMAGEN DE RESPALDO (Por si el video falla o no carga en Bolt)
 // Usa la misma imagen de fondo que tenías antes o una de los integrantes
-import posterImg from '../fotos/fondobio.JPG'; 
+import posterImg from '../fotos/fondobio.jpg'; 
 
 export default function Biography() {
   return (
