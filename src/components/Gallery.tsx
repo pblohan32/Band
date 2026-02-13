@@ -5,7 +5,7 @@ import quitoImg1 from '../fotos/quito1.png';
 import quitoImg2 from '../fotos/quito2.png';
 import quitoImg3 from '../fotos/quito3.png';
 import quitoImg4 from '../fotos/quito4.png';
-import enImg1 from '../fotos/ensayo1.JPG';
+import enImg1 from '../fotos/ensayo1.png';
 import enImg2 from '../fotos/ensayo2.JPG';
 import enImg3 from '../fotos/ensayo3.JPG';
 import enImg4 from '../fotos/ensayo4.JPG';
