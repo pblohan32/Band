@@ -2,12 +2,12 @@ import { Disc3, Play, Skull } from 'lucide-react';
 
 // --- ZONA DE IMPORTACIÓN DE PORTADAS ---
 // Ajusta la extensión (.jpg o .png) según tus archivos reales
-import interiorCover from '../fotos/interior.jpg';
-import holocaustCover from '../fotos/holocaust.jpg';
-import disgustingCover from '../fotos/disgusting.jpg';
-import moralDecayCover from '../fotos/moral_decay.jpg';
+import interiorCover from '../fotos/interior.png';
+import holocaustCover from '../fotos/holocaust.png';
+import disgustingCover from '../fotos/disgusting.png';
+import moralDecayCover from '../fotos/moral_decay.png';
 
-interface Album {,
+interface Album {
   title: string;
   year: number;
   cover: string;
