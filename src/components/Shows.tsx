@@ -10,16 +10,16 @@ interface Show {
 
 export default function Shows() {
   const shows: Show[] = [
-    { date: "15 Dic 2024", venue: "Metal Fest Nacional", city: "Ciudad de México", status: "upcoming", bands: ["Chaos Reign", "Iron Blood", "Savage Death"] },
-    { date: "8 Nov 2024", venue: "Underground Club", city: "Guadalajara", status: "past" },
-    { date: "22 Oct 2024", venue: "Rock Arena", city: "Monterrey", status: "past", bands: ["Chaos Reign", "Toxic Waste"] },
-    { date: "30 Sep 2024", venue: "Hardcore Fest", city: "Puebla", status: "past" },
-    { date: "14 Ago 2024", venue: "The Pit", city: "Ciudad de México", status: "past" },
-    { date: "5 Jul 2024", venue: "Summer Mayhem", city: "Tijuana", status: "past", bands: ["Chaos Reign", "Brutal Force", "Death Grip"] },
-    { date: "20 Jun 2024", venue: "Metal Underground", city: "Querétaro", status: "past" },
-    { date: "3 May 2024", venue: "Rage Fest", city: "León", status: "past" },
-    { date: "15 Abr 2024", venue: "Warehouse 51", city: "Guadalajara", status: "past" },
-    { date: "28 Mar 2024", venue: "Chaos Tour 2024", city: "Toluca", status: "past" },
+    { date: "25 Octubre 2025", venue: "Quitofest", city: "Quito", status: "past", bands: ["mugre sur", "madbrain", "Total death", "Road to hell", "Infecto devorante", "Withblood", "Gualgura", "Retaque", "consumidor final"] },
+    { date: "25 Enero 2024", venue: "Streetdown", city: "Medellín", status: "past" },
+    { date: "26 Marzo 2024", venue: "Baile y mosh para la defensa personal", city: "Bogotá", status: "past", bands: ["Inmemorial", "Road to hell", "spitout", "días de agresión", "the last opportunity"] },
+    { date: "20 Mayo 2024", venue: "Audiciones altavoz", city: "Medellín", status: "past" },
+    { date: "20 Septiembre 2024", venue: "Nororientalfest", city: "Medellín", status: "past" },
+    { date: "18 Agosto 2024", venue: "Ruido y solidaridad", city: "Medellín", status: "past", bands: ["Alta agresión", "Pelea o muere", "Krujido", "MIserable", "Infecto", "Anti-todo", "KATABAXIS", "HARTXS"] },
+    { date: "19 Julio 2025", venue: "Nororientalfest", city: "Medellín", status: "past" },
+    { date: "23 Agosto 2025", venue: "stoffest", city: "Medellín", status: "past" },
+    { date: "25 Enero 2026", venue: "tao part fest", city: "Medellín", status: "past" },
+    { date: "19 Marzo 2023", venue: "Rehen 19 años de violencia", city: "Bogotá", status: "past", bands: ["Rehen", "Pela o muere", "A call for revenge", "Road to hell", "Enemy.906", "Alta agresión"] },
   ];
 
   const upcomingShows = shows.filter(show => show.status === 'upcoming');
