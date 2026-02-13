@@ -1,11 +1,16 @@
-import { Calendar, MapPin, ArrowRight, Instagram, Globe, Music2 } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight, Instagram, Globe, Music2, Camera } from 'lucide-react';
 
 // 👇 IMPORTANTE: Usa la mejor foto en vivo que tengas para el Quitofest
 import quitoImage from '../fotos/potter2.png'; 
 
-export default function Shows() {
+// 1. Definimos la interface para recibir la función de navegación
+interface ShowsProps {
+  setActiveSection: (section: string) => void;
+}
+
+// 2. Recibimos la prop en la función principal
+export default function Shows({ setActiveSection }: ShowsProps) {
   
-  // 1. EL EVENTO DESTACADO (QUITOFEST)
   const highlightShow = {
     city: "QUITO, ECUADOR",
     venue: "QUITOFEST 2025",
@@ -15,7 +20,6 @@ export default function Shows() {
     bands: ["Mugre Sur", "Madbrain", "Total Death", "Road to Hell", "Infecto Devorante", "Withblood", "Gualgura", "Retaque", "Consumidor Final"]
   };
 
-  // 2. LISTA DE CONCIERTOS (Ordenados por fecha: Más reciente primero)
   const gigHistory = [
     { date: "25 ENE 2026", venue: "Tao Part Fest", city: "Medellín", bands: [] },
     { date: "23 AGO 2025", venue: "Stoffest", city: "Medellín", bands: [] },
@@ -51,10 +55,14 @@ export default function Shows() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-          {/* --- COLUMNA IZQUIERDA: QUITOFEST (Highlight) --- */}
-          <div className="lg:col-span-7 group relative h-fit sticky top-8">
+          {/* --- COLUMNA IZQUIERDA: QUITOFEST (Highlight & Link a Galería) --- */}
+          {/* 👇 AQUI ESTÁ LA MAGIA: onClick y cursor-pointer */}
+          <div 
+            className="lg:col-span-7 group relative h-fit sticky top-8 cursor-pointer"
+            onClick={() => setActiveSection('gallery')} // Al hacer click, lleva a galería
+          >
             <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-sm blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative bg-neutral-900 border-2 border-neutral-800 overflow-hidden flex flex-col shadow-2xl">
+            <div className="relative bg-neutral-900 border-2 border-neutral-800 overflow-hidden flex flex-col shadow-2xl transition-transform duration-300 group-hover:scale-[1.01]">
               
               {/* Imagen Grande */}
               <div className="relative h-96 overflow-hidden">
@@ -68,12 +76,22 @@ export default function Shows() {
                 <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-1 text-sm font-black tracking-widest uppercase shadow-lg transform -skew-x-12 z-20">
                   INTERNATIONAL ASSAULT
                 </div>
+
+                {/* 👇 NUEVO: Overlay "VER GALERÍA" al pasar el mouse */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-30 backdrop-blur-[2px]">
+                   <div className="flex flex-col items-center animate-bounce-slow">
+                     <Camera className="w-16 h-16 text-white mb-2 drop-shadow-lg" />
+                     <span className="text-white font-black text-2xl uppercase tracking-widest bg-red-600 px-4 py-1 transform -skew-x-12 shadow-lg">
+                       VER FOTOS DEL EVENTO
+                     </span>
+                   </div>
+                </div>
                 
-                {/* Overlay Gradiente */}
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/60 to-transparent"></div>
+                {/* Overlay Gradiente Base */}
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/60 to-transparent pointer-events-none"></div>
                 
                 {/* Info sobre la imagen */}
-                <div className="absolute bottom-0 left-0 p-8 w-full">
+                <div className="absolute bottom-0 left-0 p-8 w-full z-20">
                    <h3 className="text-5xl md:text-7xl font-black text-white mb-2 leading-none uppercase drop-shadow-md" style={{ fontFamily: 'Impact, sans-serif' }}>
                     {highlightShow.venue}
                   </h3>
@@ -142,7 +160,6 @@ export default function Shows() {
                        </span>
                     </div>
 
-                    {/* Renderizar bandas si existen */}
                     {show.bands.length > 0 && (
                       <div className="mt-3 pt-3 border-t border-gray-800">
                         <p className="text-[10px] text-red-600 font-bold uppercase mb-1">Con:</p>
@@ -156,7 +173,7 @@ export default function Shows() {
               </div>
             </div>
 
-            {/* --- CARD DE CONTACTO (Instagram) --- */}
+            {/* --- CARD DE CONTACTO --- */}
             <div className="bg-red-900/10 border-2 border-red-900/50 p-8 flex flex-col items-center text-center relative overflow-hidden group hover:bg-red-900/20 transition-colors shadow-[0_0_30px_rgba(220,38,38,0.1)]">
               
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
