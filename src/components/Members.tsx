@@ -9,7 +9,7 @@ import cocoImg from '../fotos/coco.png';
 
 // ⚠️ CUIDADO AQUÍ: Si esta línea falla, la comento para que la app no explote.
 // Descoméntala (quita las //) SOLO cuando estés seguro del nombre del archivo.
- import fondoImg from '../fotos/pngnegro.png'; 
+ import fondoImg from '../fotos/pngnegro.png'; .
 
 interface Member {
   name: string;
