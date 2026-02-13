@@ -7,9 +7,8 @@ import nicoImg from '../fotos/nico.png';
 import buitraImg from '../fotos/buitra.png';
 import cocoImg from '../fotos/coco.png';
 
-// ⚠️ CUIDADO AQUÍ: Si esta línea falla, la comento para que la app no explote.
-// Descoméntala (quita las //) SOLO cuando estés seguro del nombre del archivo.
- import fondoImg from '../fotos/pngnegro.png'; 
+// ✅ IMPORTACIÓN DEL FONDO (Asegúrate que el nombre sea EXACTO)
+import fondoImg from '../fotos/pngnegro.png';
 
 interface Member {
   name: string;
@@ -53,23 +52,27 @@ export default function Members() {
   ];
 
   return (
-    <section className="relative min-h-screen py-32 px-4 overflow-hidden bg-neutral-900">
+    // Quitamos 'bg-neutral-900' porque ahora el fondo lo dará la imagen
+    <section className="relative min-h-screen py-32 px-4 overflow-hidden">
       
-      {/* --- FONDO HARDCORE --- */}
-      {/* Si logras arreglar la imagen, descomenta la línea de import arriba y cambia 'null' por 'fondoImg' abajo en url() */}
+      {/* --- FONDO HARDCORE "MORAL DECAY" --- */}
+      {/* Capa 1: La imagen brutal */}
       <div 
-        className="absolute inset-0 z-0 opacity-40"
+        className="absolute inset-0 z-0"
         style={{
-          // backgroundImage: `url(${fondoImg})`, // <--- USAR ESTO CUANDO ARREGLES EL ARCHIVO
-          backgroundImage: 'linear-gradient(to bottom, #000000, #1a1a1a)', // MIENTRAS TANTO, UN DEGRADADO OSCURO
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: `url(${fondoImg})`,
+          backgroundSize: 'cover', // Cubre todo el fondo
+          backgroundPosition: 'center center', // Centra el logo
           backgroundRepeat: 'no-repeat'
         }}
       />
       
-      <div className="absolute inset-0 bg-black/80 z-0"></div>
+      {/* ⚠️ CAMBIO CRÍTICO AQUÍ ⚠️ */}
+      {/* Capa 2: El Overlay. Bajamos de bg-black/80 a bg-black/40 */}
+      {/* Esto deja ver el fondo pero mantiene el texto legible */}
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
 
+      {/* --- CONTENIDO DE LA PÁGINA --- */}
       <div className="relative z-10 container mx-auto max-w-7xl">
         <div className="flex items-center justify-center mb-16">
           <Skull className="w-12 h-12 text-red-600 mr-4 animate-pulse" />
@@ -81,9 +84,10 @@ export default function Members() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {members.map((member, index) => (
+            // Añadí un poco más de transparencia al fondo de las tarjetas (bg-neutral-900/60 -> /50) para que se integren mejor
             <div
               key={index}
-              className="bg-neutral-900/60 backdrop-blur-sm border-2 border-neutral-800 hover:border-red-600 transition-all duration-300 group overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_25px_rgba(220,38,38,0.5)]"
+              className="bg-neutral-900/50 backdrop-blur-sm border-2 border-neutral-800 hover:border-red-600 transition-all duration-300 group overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_25px_rgba(220,38,38,0.5)]"
             >
               <div className="relative overflow-hidden h-96">
                 <img
