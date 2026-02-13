@@ -1,5 +1,6 @@
 import { Image as ImageIcon, Video, Play, ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
+
 // 👇 IMPORTACIÓN DE FOTOS LOCALES
 import quitoImg1 from '../fotos/quito1.png';
 import quitoImg2 from '../fotos/quito2.png';
@@ -30,56 +31,22 @@ export default function Gallery() {
 
   // --- DATA ORGANIZADA POR SECCIONES ---
   const galleryData: GallerySection[] = [
-
-// 👇 AQUÍ ES DONDE CAMBIAS LAS FOTOS
     {
       title: "INTERNATIONAL ASSAULT (QUITOFEST)",
       items: [
-        { 
-          type: 'image', 
-          title: '1', 
-          url: quitoImg1 // 👈 Variable importada (sin comillas)
-        },
-        { 
-          type: 'image', 
-          title: '2', 
-          url: quitoImg2 
-        },
-        { 
-          type: 'image', 
-          title: '3', 
-          url: quitoImg3 
-        },
-        { 
-          type: 'image', 
-          title: '4', 
-          url: quitoImg4 
-        },
+        { type: 'image', title: '1', url: quitoImg1 },
+        { type: 'image', title: '2', url: quitoImg2 },
+        { type: 'image', title: '3', url: quitoImg3 },
+        { type: 'image', title: '4', url: quitoImg4 },
       ]
     },
     {
       title: "ENSAYOS",
       items: [
-        { 
-          type: 'image', 
-          title: '1', 
-          url: enImg1 // 👈 Variable importada (sin comillas)
-        },
-        { 
-          type: 'image', 
-          title: '2', 
-          url: enImg2 
-        },
-        { 
-          type: 'image', 
-          title: '3', 
-          url: enImg3 
-        },
-        { 
-          type: 'image', 
-          title: '4', 
-          url: enImg4 
-        },
+        { type: 'image', title: '1', url: enImg1 },
+        { type: 'image', title: '2', url: enImg2 },
+        { type: 'image', title: '3', url: enImg3 },
+        { type: 'image', title: '4', url: enImg4 },
       ]
     },
   ];
@@ -98,7 +65,6 @@ export default function Gallery() {
   const nextMedia = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (selectedSection && currentIndex !== null) {
-      // Si llegamos al final, volvemos al principio (Loop)
       setCurrentIndex((prev) => (prev === selectedSection.length - 1 ? 0 : prev! + 1));
     }
   };
@@ -106,12 +72,10 @@ export default function Gallery() {
   const prevMedia = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (selectedSection && currentIndex !== null) {
-      // Si estamos al principio, vamos al final
       setCurrentIndex((prev) => (prev === 0 ? selectedSection.length - 1 : prev! - 1));
     }
   };
 
-  // Helper para renderizar el item actual en el modal
   const currentItem = selectedSection && currentIndex !== null ? selectedSection[currentIndex] : null;
 
   return (
@@ -133,22 +97,17 @@ export default function Gallery() {
           <Video className="w-10 h-10 md:w-12 md:h-12 text-red-600 ml-4" />
         </div>
 
-        {/* --- MAPEO DE SECCIONES (AQUÍ ESTÁ LA MAGIA DEL SCROLL) --- */}
+        {/* --- MAPEO DE SECCIONES --- */}
         <div className="space-y-16">
           {galleryData.map((section, sectionIndex) => (
             <div key={sectionIndex} className="animate-fade-in-up">
               
-              {/* Título de la Sección */}
               <h3 className="text-2xl md:text-3xl font-black text-white mb-6 border-l-4 border-red-600 pl-4 uppercase tracking-wider flex items-center gap-2">
                 {section.title}
                 {section.title.includes("VIDEO") && <Video className="w-6 h-6 text-red-600 animate-pulse" />}
               </h3>
 
-              {/* Contenedor de Scroll Horizontal */}
-              {/* 'overflow-x-auto' permite el scroll lateral */}
-              {/* 'snap-x' hace que las fotos se detengan alineadas */}
               <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-red-900 scrollbar-track-neutral-900">
-                
                 {section.items.map((item, itemIndex) => (
                   <div 
                     key={itemIndex}
@@ -161,10 +120,8 @@ export default function Gallery() {
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                     />
                     
-                    {/* Overlay oscuro */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
 
-                    {/* Ícono de Play si es video */}
                     {item.type === 'video' && (
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="bg-red-600/80 rounded-full p-4 backdrop-blur-sm group-hover:bg-red-600 group-hover:scale-110 transition-all shadow-[0_0_20px_rgba(220,38,38,0.5)]">
@@ -173,7 +130,6 @@ export default function Gallery() {
                       </div>
                     )}
 
-                    {/* Título de la foto */}
                     <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform">
                       <p className="text-white font-black text-lg uppercase tracking-wide drop-shadow-md leading-none">
                         {item.title}
@@ -187,13 +143,12 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* --- MODAL (LIGHTBOX) --- */}
+      {/* --- MODAL (LIGHTBOX) CORREGIDO --- */}
       {currentItem && (
         <div 
           className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={closeModal}
         >
-          {/* Botón Cerrar */}
           <button 
             onClick={closeModal}
             className="absolute top-6 right-6 text-gray-400 hover:text-red-600 transition-colors z-50"
@@ -201,7 +156,6 @@ export default function Gallery() {
             <X className="w-10 h-10" />
           </button>
 
-          {/* Botón Anterior */}
           <button 
             onClick={prevMedia}
             className="absolute left-4 md:left-8 text-white hover:text-red-600 transition-transform hover:scale-110 z-50 bg-black/50 p-2 rounded-full hidden md:block"
@@ -209,28 +163,32 @@ export default function Gallery() {
             <ChevronLeft className="w-10 h-10" />
           </button>
 
-          {/* Contenido Principal */}
+          {/* CONTENEDOR DE IMAGEN FLEXIBLE */}
           <div 
-            className="max-w-6xl w-full max-h-[90vh] flex flex-col items-center"
-            onClick={(e) => e.stopPropagation()} // Evita cerrar si clickeas dentro
+            className="max-w-7xl w-full max-h-[90vh] flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()} 
           >
-            <div className="relative w-full aspect-video bg-black border border-neutral-800 shadow-[0_0_50px_rgba(220,38,38,0.2)]">
-              {currentItem.type === 'image' ? (
-                <img
+            {/* Si es IMAGEN, usamos max-h para que no se salga de pantalla y w-auto para mantener proporción */}
+            {currentItem.type === 'image' ? (
+              <div className="relative flex justify-center items-center">
+                 <img
                   src={currentItem.url}
                   alt={currentItem.title}
-                  className="w-full h-full object-contain"
+                  className="max-w-full max-h-[80vh] w-auto h-auto object-contain border border-neutral-800 shadow-[0_0_50px_rgba(220,38,38,0.2)]"
                 />
-              ) : (
+              </div>
+            ) : (
+              // Si es VIDEO, mantenemos aspect-video (16:9)
+              <div className="w-full aspect-video border border-neutral-800 shadow-[0_0_50px_rgba(220,38,38,0.2)]">
                 <iframe
-                  src={`${currentItem.url}?autoplay=1`} // Autoplay al abrir
+                  src={`${currentItem.url}?autoplay=1`} 
                   className="w-full h-full"
                   allow="autoplay; encrypted-media; fullscreen"
                   allowFullScreen
                   title={currentItem.title}
                 ></iframe>
-              )}
-            </div>
+              </div>
+            )}
             
             <h3 className="text-2xl md:text-3xl font-black text-white mt-6 uppercase tracking-widest text-center" style={{ fontFamily: 'Impact, sans-serif' }}>
               {currentItem.title}
@@ -240,7 +198,6 @@ export default function Gallery() {
             </p>
           </div>
 
-          {/* Botón Siguiente */}
           <button 
             onClick={nextMedia}
             className="absolute right-4 md:right-8 text-white hover:text-red-600 transition-transform hover:scale-110 z-50 bg-black/50 p-2 rounded-full hidden md:block"
