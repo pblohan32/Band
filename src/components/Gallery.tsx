@@ -1,10 +1,10 @@
 import { Image as ImageIcon, Video, Play, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useState, useRef } from 'react';
 // 👇 IMPORTACIÓN DE FOTOS LOCALES
-import quitoImg1 from '../fotos/quito1.jpg';
-import quitoImg2 from '../fotos/quito2.jpg';
-import quitoImg3 from '../fotos/quito3.jpg';
-import quitoImg4 from '../fotos/quito4.jpg';
+import quitoImg1 from '../fotos/quito1.png';
+import quitoImg2 from '../fotos/quito2.png';
+import quitoImg3 from '../fotos/quito3.png';
+import quitoImg4 from '../fotos/quito4.png';
 
 // --- INTERFACES ---
 interface MediaItem {
