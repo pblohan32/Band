@@ -14,8 +14,8 @@ import sdImg1 from '../fotos/sd1_(1).png';
 import sdImg2 from '../fotos/sd1_(2).png';
 import sdImg3 from '../fotos/sd1_(3).png';
 import sdImg4 from '../fotos/sd1_(4).png';
-import sdImg3 from '../fotos/sd1_(5).png';
-import sdImg4 from '../fotos/sd1_(7).png';
+import sdImg5 from '../fotos/sd1_(5).png';
+import sdImg6 from '../fotos/sd1_(7).png';
 
 // --- INTERFACES ---
 interface MediaItem {
