@@ -2,18 +2,23 @@ import { Image as ImageIcon, Video, Play, ChevronLeft, ChevronRight, X } from 'l
 import { useState } from 'react';
 
 // 👇 IMPORTACIÓN DE FOTOS LOCALES
+// Asegúrate de que las rutas y extensiones (.png, .jpg) sean exactas
 import quitoImg1 from '../fotos/quito1.png';
 import quitoImg2 from '../fotos/quito2.png';
 import quitoImg3 from '../fotos/quito3.png';
 import quitoImg4 from '../fotos/quito4.png';
+
 import enImg1 from '../fotos/ensayo1.png';
 import enImg2 from '../fotos/ensayo2.png';
 import enImg3 from '../fotos/ensayo3.png';
 import enImg4 from '../fotos/ensayo4.png';
+
 import sdImg1 from '../fotos/sd1_(1).png';
 import sdImg2 from '../fotos/sd1_(2).png';
+// Nota: Saltaste el 3 en tus imports, así que sigo tu orden
 import sdImg4 from '../fotos/sd1_(4).png';
 import sdImg5 from '../fotos/sd1_(5).png';
+
 import sd2Img1 from '../fotos/sd2_(1).png';
 import sd2Img2 from '../fotos/sd2_(2).png';
 import sd2Img3 from '../fotos/sd2_(3).png';
@@ -22,8 +27,8 @@ import sd2Img4 from '../fotos/sd2_(4).png';
 // --- INTERFACES ---
 interface MediaItem {
   type: 'image' | 'video';
-  url: string;      // URL de la imagen o del embed de video
-  thumbnail?: string; // Solo para videos: la portada antes de dar play
+  url: string;      
+  thumbnail?: string; 
   title: string;
 }
 
@@ -33,7 +38,6 @@ interface GallerySection {
 }
 
 export default function Gallery() {
-  // Estado para el modal
   const [selectedSection, setSelectedSection] = useState<MediaItem[] | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
@@ -70,14 +74,14 @@ export default function Gallery() {
       title: "Streetdown 2022",
       items: [
         { type: 'image', title: '1', url: sd2Img1 },
-        { type: 'image', title: '2', url: sdI2mg2 },
-        { type: 'image', title: '3', url: sdI2mg3 },
-        { type: 'image', title: '4', url: sdI2mg4 },
+        { type: 'image', title: '2', url: sd2Img2 }, // 👈 CORREGIDO (antes decía sdI2mg2)
+        { type: 'image', title: '3', url: sd2Img3 }, // 👈 CORREGIDO (antes decía sdI2mg3)
+        { type: 'image', title: '4', url: sd2Img4 }, // 👈 CORREGIDO (antes decía sdI2mg4)
       ]
     },
   ];
 
-  // --- FUNCIONES DE NAVEGACIÓN DEL MODAL ---
+  // --- FUNCIONES DE NAVEGACIÓN ---
   const openModal = (sectionItems: MediaItem[], index: number) => {
     setSelectedSection(sectionItems);
     setCurrentIndex(index);
@@ -169,7 +173,7 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* --- MODAL (LIGHTBOX) CORREGIDO --- */}
+      {/* --- MODAL (LIGHTBOX) --- */}
       {currentItem && (
         <div 
           className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
@@ -189,12 +193,10 @@ export default function Gallery() {
             <ChevronLeft className="w-10 h-10" />
           </button>
 
-          {/* CONTENEDOR DE IMAGEN FLEXIBLE */}
           <div 
             className="max-w-7xl w-full max-h-[90vh] flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()} 
           >
-            {/* Si es IMAGEN, usamos max-h para que no se salga de pantalla y w-auto para mantener proporción */}
             {currentItem.type === 'image' ? (
               <div className="relative flex justify-center items-center">
                  <img
@@ -204,7 +206,6 @@ export default function Gallery() {
                 />
               </div>
             ) : (
-              // Si es VIDEO, mantenemos aspect-video (16:9)
               <div className="w-full aspect-video border border-neutral-800 shadow-[0_0_50px_rgba(220,38,38,0.2)]">
                 <iframe
                   src={`${currentItem.url}?autoplay=1`} 
