@@ -1,8 +1,6 @@
 import { Flame, Disc, Skull } from 'lucide-react';
 
-// 👇 AQUÍ IMPORTAS TU FONDO.
-// Asegúrate de que la ruta '../fotos/pngnegro.png' sea correcta.
-// Si usas otra imagen, cambia el nombre aquí.
+
 import bioBg from '../fotos/pngnegro.png'; 
 
 export default function Biography() {
