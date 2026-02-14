@@ -16,6 +16,10 @@ import sdImg3 from '../fotos/sd1_(3).png';
 import sdImg4 from '../fotos/sd1_(4).png';
 import sdImg5 from '../fotos/sd1_(5).png';
 import sdImg6 from '../fotos/sd1_(7).png';
+import sd2Img1 from '../fotos/sd2_(1).png';
+import sd2Img2 from '../fotos/sd2_(2).png';
+import sd2Img3 from '../fotos/sd2_(3).png';
+import sd2Img4 from '../fotos/sd2_(4).png';
 
 // --- INTERFACES ---
 interface MediaItem {
@@ -64,6 +68,15 @@ export default function Gallery() {
         { type: 'image', title: '4', url: sdImg4 },
         { type: 'image', title: '5', url: sdImg5 },
         { type: 'image', title: '6', url: sdImg6 },
+      ]
+    },
+    {
+      title: "Streetdown 2022",
+      items: [
+        { type: 'image', title: '1', url: sd2Img1 },
+        { type: 'image', title: '2', url: sdI2mg2 },
+        { type: 'image', title: '3', url: sdI2mg3 },
+        { type: 'image', title: '4', url: sdI2mg4 },
       ]
     },
   ];
