@@ -55,6 +55,17 @@ export default function Gallery() {
         { type: 'image', title: '4', url: enImg4 },
       ]
     },
+    {
+      title: "Streetdown 2025",
+      items: [
+        { type: 'image', title: '1', url: sdImg1 },
+        { type: 'image', title: '2', url: sdImg2 },
+        { type: 'image', title: '3', url: sdImg3 },
+        { type: 'image', title: '4', url: sdImg4 },
+        { type: 'image', title: '5', url: sdImg5 },
+        { type: 'image', title: '6', url: sdImg6 },
+      ]
+    },
   ];
 
   // --- FUNCIONES DE NAVEGACIÓN DEL MODAL ---
