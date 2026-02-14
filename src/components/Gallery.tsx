@@ -66,8 +66,8 @@ export default function Gallery() {
       items: [
         { type: 'image', title: '1', url: sdImg1 },
         { type: 'image', title: '2', url: sdImg2 },
-        { type: 'image', title: '4', url: sdImg4 },
-        { type: 'image', title: '5', url: sdImg5 },
+        { type: 'image', title: '3', url: sdImg4 },
+        { type: 'image', title: '4', url: sdImg5 },
       ]
     },
     {
