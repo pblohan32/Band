@@ -21,15 +21,36 @@ export default function Shows({ setActiveSection }: ShowsProps) {
   };
 
   const gigHistory = [
-    { date: "25 ENE 2026", venue: "Tao Part Fest", city: "Medellín", bands: [] },
-    { date: "23 AGO 2025", venue: "Stoffest", city: "Medellín", bands: [] },
-    { date: "19 JUL 2025", venue: "Nororientalfest", city: "Medellín", bands: [] },
-    { date: "20 SEP 2024", venue: "Nororientalfest", city: "Medellín", bands: [] },
+    { date: "25 ENE 2026", venue: "Tao Part Fest", city: "Medellín", bands: ["Cuchas", "Trauma Encefálico", "Tao Part", "Último En Caer", "Sangrando Ruido", "Outside Mobb", "Caribe Skillz", "Sativo CNS"
+] },
+    { date: "09 JUN 2025", venue: "Streetdown", city: "Medellín", bands: ["Rehén", "Exigencia", "Barrio Infernum", "Pelea O Muere", "Screaming Your Name", "Inmemorial", "Bombas x Minuto", "Christopher Mad"] },
+    { date: "23 AGO 2025", venue: "Stoffest", city: "Medellín", bands: ["Sin Desistir", "Desangrados", "Miserable", "El Incendio Más Largo Del Mundo", "Ahora o Nunca"
+] },
+    { date: "19 JUL 2025", venue: "Nororientalfest", city: "Medellín", bands: ["Disfiguring The Madness", "Rencor", "Líbranos Del Mal", "Real House Of Hate", "Días D Perroz", "Hastío", "Tout Neant Crew"
+] },
+    { date: "20 SEP 2024", venue: "Nororientalfest", city: "Medellín", bands: ["Buer", "Gliese", "Tedio", "Real House Of Hate", "Yut Cru", "Ahora o Nunca"] },
     { date: "18 AGO 2024", venue: "Ruido y Solidaridad", city: "Medellín", bands: ["Alta Agresión", "Pelea o Muere", "Krujido", "Miserable", "Infecto", "Anti-todo", "Katabaxis", "Hartxs"] },
     { date: "20 MAY 2024", venue: "Audiciones Altavoz", city: "Medellín", bands: [] },
-    { date: "26 MAR 2024", venue: "Baile y Mosh", city: "Bogotá", bands: ["Inmemorial", "Road to Hell", "Spitout", "Días de Agresión", "The Last Opportunity"] },
-    { date: "25 ENE 2024", venue: "Streetdown", city: "Medellín", bands: [] },
+    { date: "26 MAR 2024", venue: "Baile y Mosh para la defensa personal", city: "Bogotá", bands: ["Inmemorial", "Road to Hell", "Spitout", "Días de Agresión", "The Last Opportunity"] },
+    { date: "25 ENE 2024", venue: "Streetdown", city: "Medellín", bands: ["Xibalba(USA)","A Vísperas De Mi Muerte", "Real House Of Hate", "Colapso", "Pariah", "Road to hell"] },
+    { date: "03 JUN 2023", venue: "Noche de Jauría", city: "Medellín", bands: ["SMA", "Johst", "Guxxisoho", "Babyglissy", "Healthymob", "Road to hell"] },
     { date: "19 MAR 2023", venue: "Rehen: 19 Años", city: "Bogotá", bands: ["Rehen", "Pelea o Muere", "A Call For Revenge", "Road to Hell", "Enemy.906", "Alta Agresión"] },
+    { date: "18 ENE 2023", venue: "Estridencia A La Escuela", city: "Medellín", bands: ["Antexedentez", "Fénix Réquiem", "Coprofagia", "El Incendio Más Largo Del Mundo", "Bombas x Minuto", "Milltantex", "Devil Boogie", "Trayecto Misil", "Miserable", "Repunknancia", "Morbo Sound Machine","Bastar2", "Road to hell"] },
+{ date: "02 ABR 2022", venue: "Fat Crew Fest 4", city: "Medellín", bands: ["Días De Agresión", "XZero ToleranceX", "The Last Opportunity", "Hate for Hate", "Motín", "Ahora o Nunca", "Devastal", "Control","Road to hell"] },
+{ date: "19 DIC 2020", venue: "Before a Christmas Mosh Fest 4", city: "Medellín", bands: ["En Tu Cara", "Giro De Un Grito", "Tao Part", "Pariah", "Renkore", "Control", "Road to hell"] },
+{ date: "02 NOV 2019", venue: "Violence Room", city: "Cali", bands: ["Conflicto", "Sacrificium Tagaer", "Anal Arcade", "Keep Away", "Disfiguring The Madness", "Streets Sick", "Caos Astral", "Road to hell"] },
+{ date: "12 OCT 2019", venue: "Beatdown Nororiental Fest", city: "Medellín", bands: ["Inmemorial", "Real House Of Hate", "Entre Calles", "Sin Desistir", "Motín", "Nix", "Road to hell"] },
+    { date: "27 JUL 2019", venue: "Street Down 9", city: "Medellín", bands: ["Fortaleza", "Instinto Asesino", "Pelea o Muere", "Sin Desistir", "Errante", "Motín", "Inmemorial", "Defensa", "Road to hell"] },
+{ date: "26 MAY 2019", venue: "Show Debut Tao Part", city: "Medellín", bands: ["El Verdadero Guerrero", "Ruda", "Silencio Asesino", "Real House Of Hate", "Road to hell"] },
+    { date: "28 NOV 2018", venue: "MCHC", city: "Manizales", bands: ["Motín", "Entre Calles", "Streets Sick", "Rigor", "Real House Of Hate", "Contra", "Screaming Your Name", "Road to hell"] },
+    { date: "04 NOV 2018", venue: "Street Down 8", city: "Medellín", bands: ["Acto de Crueldad", "Rigor", "Rehén", "Nix", "Screaming Your Name", "Real House Of Hate", "Colapso", "Sector 99", "Pelea o Muere", "Road to hell"] },
+    { date: "09 ABR 2017", venue: "Más Allá del Hardcore 3", city: "Medellín", bands: ["Sin Desistir", "Control", "You Are My Addiction", "Nix", "Atrofia", "Deserción", "Motín", "Road to hell"] },
+    { date: "17 MAR 2017 - 18 MAR 2017", venue: "Festival Nacional: Armenia Grita Hardcore", city: "Armenia", bands: ["Dead Rise in Atlanta", "Betrayal of Angels", "Contraataque", "Adversario", "Salvaguardia", "Estado de Coma", "Sin Desistir", "Caos Astral", "Tiempos Violentos", "En Tu Cara", "Reacción Directa", "Áticos", "The Hate Will Prevail", "Road to hell"] },
+    { date: "18 DIC 2016", venue: "Before a Christmas Mosh Fest", city: "Medellín", bands: ["Real House Of Hate", "Tiempos Violentos", "Línea de Lucha", "Pelea o Muere", "Somos Miedo", "Entre Calles", "Control", "Colapso", "Pariah", "Road to hell"] },
+    { date: "03 DIC 2016", venue: "Festival Internacional: Terror Mosh Hardcore", city: "Pereira", bands: ["Streets Sick", "Instinto Asesino", "For My Scars I Fight Fam", "Control", "Cerebral Infest", "Tendencia HxC", "Sin Rencor", "Estado de Coma", "Nofe", "Serverus", "Puño", "Road to hell"] },
+    { date: "19 NOV 2016", venue: "Sonidos del Barrio", city: "Medellín", bands: ["La Casa del Perro", "Llama Naciente", "Revoludos", "1910", "Eskroto de Res", "Stonewalker", "Road to hell"] },
+    { date: "15 OCT 2016", venue: "Brothers Of Destruction", city: "Medellín", bands: ["Cruciatus", "Demonized", "Craneo", "Road to hell"] },
+    
   ];
 
   return (
