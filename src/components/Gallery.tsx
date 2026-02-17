@@ -49,12 +49,11 @@ import rsImg4 from '../fotos/rs4.png';
 import rsImg5 from '../fotos/rs5.png';
 import rsImg6 from '../fotos/rs6.png';
 
-import chImg1 from '../fotos/ch1.png';
-import chImg2 from '../fotos/ch2.png';
-import chImg3 from '../fotos/ch3.png';
-import chImg4 from '../fotos/ch4.png';
-import chImg5 from '../fotos/ch5.png';
-import chImg6 from '../fotos/ch6.png';
+import chImg2 from '../ch2.png';
+import chImg3 from '../ch3.png';
+import chImg4 from '../ch4.png';
+import chImg5 from '../ch5.png';
+import chImg6 from '../ch6.png';
 
 // --- INTERFACES ---
 interface MediaItem {
@@ -149,7 +148,6 @@ export default function Gallery() {
     
     {  title: "Nosotros",
       items: [
-        { type: 'image', title: '1', url: chImg1 },
         { type: 'image', title: '2', url: chImg2 },
         { type: 'image', title: '3', url: chImg3 },
         { type: 'image', title: '4', url: chImg4 },
