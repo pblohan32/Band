@@ -121,8 +121,8 @@ export default function Gallery() {
         { type: 'image', title: '2', url: sd3Img2 }, 
         { type: 'image', title: '3', url: sd3Img3 }, 
         { type: 'image', title: '4', url: sd3Img4 }, 
-        { type: 'image', title: '3', url: sd3Img5 }, 
-        { type: 'image', title: '4', url: sd3Img6 }, 
+        { type: 'image', title: '5', url: sd3Img5 }, 
+        { type: 'image', title: '6', url: sd3Img6 }, 
       ]
     },
 
@@ -141,8 +141,8 @@ export default function Gallery() {
         { type: 'image', title: '2', url: rsImg2 },
         { type: 'image', title: '3', url: rsImg3 },
         { type: 'image', title: '4', url: rsImg4 },
-        { type: 'image', title: '3', url: rsImg5 },
-        { type: 'image', title: '4', url: rsImg6 },
+        { type: 'image', title: '5', url: rsImg5 },
+        { type: 'image', title: '6', url: rsImg6 },
       ]
     },
     
