@@ -148,11 +148,11 @@ export default function Gallery() {
     
     {  title: "Nosotros",
       items: [
-        { type: 'image', title: '2', url: chImg2 },
-        { type: 'image', title: '3', url: chImg3 },
-        { type: 'image', title: '4', url: chImg4 },
-        { type: 'image', title: '3', url: chImg5 },
-        { type: 'image', title: '4', url: chImg6 },
+        { type: 'image', title: '1', url: chImg2 },
+        { type: 'image', title: '2', url: chImg3 },
+        { type: 'image', title: '3', url: chImg4 },
+        { type: 'image', title: '4', url: chImg5 },
+        { type: 'image', title: '5', url: chImg6 },
       ]
     },
   ];
