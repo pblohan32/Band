@@ -12,6 +12,17 @@ import enImg1 from '../fotos/ensayo1.png';
 import enImg2 from '../fotos/ensayo2.png';
 import enImg3 from '../fotos/ensayo3.png';
 import enImg4 from '../fotos/ensayo4.png';
+import enImg5 from '../fotos/ensayo5.png';
+import enImg6 from '../fotos/ensayo6.png';
+import enImg7 from '../fotos/ensayo7.png';
+import enImg8 from '../fotos/ensayo8.png';
+import enImg9 from '../fotos/ensayo9.png';
+import enImg10 from '../fotos/ensayo10.png';
+import enImg11 from '../fotos/ensayo11.png';
+import enImg12 from '../fotos/ensayo12.png';
+import enImg13 from '../fotos/ensayo13.png';
+import enImg14 from '../fotos/ensayo14.png';
+import enImg15 from '../fotos/ensayo15.png';
 
 import sdImg1 from '../fotos/sd1_(1).png';
 import sdImg2 from '../fotos/sd1_(2).png';
@@ -30,6 +41,20 @@ import sd3Img3 from '../fotos/sd3(3).png';
 import sd3Img4 from '../fotos/sd3(4).png';
 import sd3Img5 from '../fotos/sd3(5).png';
 import sd3Img6 from '../fotos/sd3(8).png';
+
+import rsImg1 from '../fotos/rs1.png';
+import rsImg2 from '../fotos/rs2.png';
+import rsImg3 from '../fotos/rs3.png';
+import rsImg4 from '../fotos/rs4.png';
+import rsImg5 from '../fotos/rs5.png';
+import rsImg6 from '../fotos/rs6.png';
+
+import chImg1 from '../fotos/ch1.png';
+import chImg2 from '../fotos/ch2.png';
+import chImg3 from '../fotos/ch3.png';
+import chImg4 from '../fotos/ch4.png';
+import chImg5 from '../fotos/ch5.png';
+import chImg6 from '../fotos/ch6.png';
 
 // --- INTERFACES ---
 interface MediaItem {
@@ -66,6 +91,17 @@ export default function Gallery() {
         { type: 'image', title: '2', url: enImg2 },
         { type: 'image', title: '3', url: enImg3 },
         { type: 'image', title: '4', url: enImg4 },
+        { type: 'image', title: '5', url: enImg5 },
+        { type: 'image', title: '6', url: enImg6 },
+        { type: 'image', title: '7', url: enImg7 },
+        { type: 'image', title: '8', url: enImg8 },
+        { type: 'image', title: '9', url: enImg9 },
+        { type: 'image', title: '10', url: enImg10 },
+        { type: 'image', title: '11', url: enImg11 },
+        { type: 'image', title: '12', url: enImg12 },
+        { type: 'image', title: '13', url: enImg13 },
+        { type: 'image', title: '14', url: enImg14 },
+        { type: 'image', title: '15', url: enImg15 },
       ]
     },
 
@@ -97,6 +133,28 @@ export default function Gallery() {
         { type: 'image', title: '2', url: sdImg2 },
         { type: 'image', title: '3', url: sdImg4 },
         { type: 'image', title: '4', url: sdImg5 },
+      ]
+    },
+
+  {  title: "Ruido y solidaridad vol 4",
+      items: [
+        { type: 'image', title: '1', url: rsImg1 },
+        { type: 'image', title: '2', url: rsImg2 },
+        { type: 'image', title: '3', url: rsImg3 },
+        { type: 'image', title: '4', url: rsImg4 },
+        { type: 'image', title: '3', url: rsImg5 },
+        { type: 'image', title: '4', url: rsImg6 },
+      ]
+    },
+    
+    {  title: "Nosotros",
+      items: [
+        { type: 'image', title: '1', url: chImg1 },
+        { type: 'image', title: '2', url: chImg2 },
+        { type: 'image', title: '3', url: chImg3 },
+        { type: 'image', title: '4', url: chImg4 },
+        { type: 'image', title: '3', url: chImg5 },
+        { type: 'image', title: '4', url: chImg6 },
       ]
     },
   ];
