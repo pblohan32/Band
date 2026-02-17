@@ -24,6 +24,13 @@ import sd2Img2 from '../fotos/sd2_(2).png';
 import sd2Img3 from '../fotos/sd2_(3).png';
 import sd2Img4 from '../fotos/sd2_(4).png';
 
+import sd3Img1 from '../fotos/sd3.png';
+import sd3Img2 from '../fotos/sd3(2).png';
+import sd3Img3 from '../fotos/sd3(3).png';
+import sd3Img4 from '../fotos/sd3(4).png';
+import sd3Img5 from '../fotos/sd3(5).png';
+import sd3Img6 from '../fotos/sd3(8).png';
+
 // --- INTERFACES ---
 interface MediaItem {
   type: 'image' | 'video';
@@ -61,15 +68,7 @@ export default function Gallery() {
         { type: 'image', title: '4', url: enImg4 },
       ]
     },
-    {
-      title: "Streetdown 2025",
-      items: [
-        { type: 'image', title: '1', url: sdImg1 },
-        { type: 'image', title: '2', url: sdImg2 },
-        { type: 'image', title: '3', url: sdImg4 },
-        { type: 'image', title: '4', url: sdImg5 },
-      ]
-    },
+
     {
       title: "Streetdown 2022",
       items: [
@@ -77,6 +76,27 @@ export default function Gallery() {
         { type: 'image', title: '2', url: sd2Img2 }, // 👈 CORREGIDO (antes decía sdI2mg2)
         { type: 'image', title: '3', url: sd2Img3 }, // 👈 CORREGIDO (antes decía sdI2mg3)
         { type: 'image', title: '4', url: sd2Img4 }, // 👈 CORREGIDO (antes decía sdI2mg4)
+      ]
+    },
+
+    {
+      title: "Streetdown 2024",
+      items: [
+        { type: 'image', title: '1', url: sd3Img1 },
+        { type: 'image', title: '2', url: sd3Img2 }, 
+        { type: 'image', title: '3', url: sd3Img3 }, 
+        { type: 'image', title: '4', url: sd3Img4 }, 
+        { type: 'image', title: '3', url: sd3Img5 }, 
+        { type: 'image', title: '4', url: sd3Img6 }, 
+      ]
+    },
+
+        {  title: "Streetdown 2025",
+      items: [
+        { type: 'image', title: '1', url: sdImg1 },
+        { type: 'image', title: '2', url: sdImg2 },
+        { type: 'image', title: '3', url: sdImg4 },
+        { type: 'image', title: '4', url: sdImg5 },
       ]
     },
   ];
